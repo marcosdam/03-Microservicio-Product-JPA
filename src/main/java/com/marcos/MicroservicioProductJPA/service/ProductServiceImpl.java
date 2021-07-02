@@ -3,15 +3,18 @@ package com.marcos.MicroservicioProductJPA.service;
 import com.marcos.MicroservicioProductJPA.entity.Category;
 import com.marcos.MicroservicioProductJPA.entity.Product;
 import com.marcos.MicroservicioProductJPA.repository.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService{
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Override
     public List<Product> listAllProduct() {
